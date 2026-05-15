@@ -4,7 +4,7 @@ const fs = require('fs');
 const { getDB } = require('./db/init');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 
 // 确保上传目录存在
 const uploadsDir = path.join(__dirname, 'public', 'uploads');
