@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>管理后台 - 企业官网管理系统</title>
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+  <!-- 登录界面 -->
+  <div class="login-wrapper" id="login-wrapper">
+    <div class="login-card">
+      <div class="login-logo">⚙️</div>
+      <h2>企业官网管理系统</h2>
+      <form id="login-form" onsubmit="return handleLogin(event)">
+        <div class="form-group">
+          <label>用户名</label>
+          <input type="text" id="login-username" placeholder="请输入用户名" required />
+        </div>
+        <div class="form-group">
+          <label>密码</label>
+          <input type="password" id="login-password" placeholder="请输入密码" required />
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px">登 录</button>
+        <p id="login-error" style="color:var(--danger);font-size:0.85rem;text-align:center;margin-top:10px;display:none"></p>
+      </form>
+    </div>
+  </div>
+
+  <!-- 管理后台主体 -->
+  <div class="admin-layout" id="admin-layout" style="display:none">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">⚙️</div>
+        <h2>管理后台</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="nav-item active" data-page="dashboard" onclick="showPage('dashboard')">
+          <span>📊</span> 仪表盘
+        </a>
+        <a class="nav-item" data-page="site-config" onclick="showPage('site-config')">
+          <span>🌐</span> 站点配置
+        </a>
+        <a class="nav-item" data-page="modules" onclick="showPage('modules')">
+          <span>🧩</span> 模块管理
+        </a>
+        <a class="nav-item" data-page="menu" onclick="showPage('menu')">
+          <span>📋</span> 菜单管理
+        </a>
+        <a class="nav-item" data-page="contacts" onclick="showPage('contacts')">
+          <span>📬</span> 咨询管理
+        </a>
+      </nav>
+      <div style="padding:16px;margin-top:auto">
+        <a href="/" class="nav-item" style="color:#64748b" target="_blank">
+          <span>🏠</span> 预览前台
+        </a>
+        <a class="nav-item" style="color:#64748b;cursor:pointer" onclick="handleLogout()">
+          <span>🚪</span> 退出登录
+        </a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="topbar">
+        <h3 id="page-title">仪表盘</h3>
+        <div style="display:flex;align-items:center;gap:12px">
+          <span id="admin-username" style="color:#64748b;font-size:0.9rem">管理员</span>
+        </div>
+      </div>
+      <div class="content-area" id="content-area"></div>
+    </main>
+  </div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>
