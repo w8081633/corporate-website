@@ -1,6 +1,5 @@
 {
   "name": "enterprise-site",
-  "type": "module",
   "version": "1.0.0",
   "description": "现代化可配置企业官网 - SQLite + 动态模块加载",
   "main": "server.js",
